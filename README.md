@@ -4,7 +4,7 @@
 
 A Dice Rolling app.
 
-![img.png](img.png)
+![img.png](img.webp)
 
 ## What I learned
 
