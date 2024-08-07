@@ -7,10 +7,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // make navigation bar transparent
   SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.transparent,
-    ),
-  );
+      const SystemUiOverlayStyle(systemNavigationBarColor: Colors.transparent));
   // make flutter draw behind navigation bar
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   runApp(const MyApp());
@@ -37,7 +34,30 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       themeMode: ThemeMode.system,
-      home: DicePage(),
+      home: DiceApp(),
+    );
+  }
+}
+
+class DiceApp extends StatelessWidget {
+  const DiceApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        title: Text(
+          "Dicee",
+          style: TextStyle(
+              color: Theme.of(context).colorScheme.onPrimaryContainer),
+        ),
+      ),
+      body: SafeArea(
+        minimum: EdgeInsets.symmetric(horizontal: 16),
+        child: DicePage(),
+      ),
     );
   }
 }
