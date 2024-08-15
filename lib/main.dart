@@ -10,15 +10,9 @@ void main() {
       const SystemUiOverlayStyle(systemNavigationBarColor: Colors.transparent));
   // make flutter draw behind navigation bar
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -35,8 +29,8 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.system,
       home: DiceApp(),
-    );
-  }
+    ),
+  );
 }
 
 class DiceApp extends StatelessWidget {
